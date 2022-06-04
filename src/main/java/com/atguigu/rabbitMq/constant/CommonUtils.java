@@ -6,7 +6,8 @@ package com.atguigu.rabbitMq.constant;
  * @author Hanser
  */
 public class CommonUtils {
-
-    //消息队列名称
+    /**
+     * 消息队列名称
+     */
     public static final String QUEUE_NAME = "HELLO";
 }

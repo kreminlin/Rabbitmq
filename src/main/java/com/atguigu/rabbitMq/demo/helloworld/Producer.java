@@ -41,8 +41,8 @@ public class Producer {
              * 5. 其他参数
              */
             channel.queueDeclare(QUEUE_NAME, false, false, false, null);
-            //发消息
-            String message = "hello world"; //初次使用
+            //发消息,初次使用
+            String message = "hello world";
             /**
              * 发送一个消息
              * 1.发送到那个交换机
