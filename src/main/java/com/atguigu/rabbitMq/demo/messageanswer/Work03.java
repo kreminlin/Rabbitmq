@@ -19,7 +19,7 @@ public class Work03 implements Runnable {
             System.out.println("C1 等待接收消息处理时间较短");
             //消息消费的时候如何处理消息
             DeliverCallback deliverCallback = (consumerTag, delivery) -> {
-                SleepUtils.sleep(1);
+                SleepUtils.sleep(30);
                 String message = new String(delivery.getBody());
                 System.out.println("接收到消息:" + message);
                 /**
@@ -39,7 +39,7 @@ public class Work03 implements Runnable {
              * 慢的等待当前处理完再处理下一条。这样就实现了能者多劳。
              */
             //这个是设置信道容量的大小，采用轮询的方式往信道放消息，信道满了就跳过！！！！
-            channel.basicQos(1);
+            channel.basicQos(2);
             boolean autoAck = false;
             channel.basicConsume(CommonUtils.ACK_QUEUE_NAME, autoAck, deliverCallback, (consumerTag) -> {
                 System.out.println(consumerTag + "消费者取消消费接口回调逻辑");
