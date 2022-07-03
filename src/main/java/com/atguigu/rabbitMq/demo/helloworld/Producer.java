@@ -16,7 +16,6 @@ public class Producer {
 
     //队列名称
     public static final String QUEUE_NAME = "hello";
-
     //发消息
     public static void main(String[] args) {
         //创建一个队列工厂
@@ -25,7 +24,6 @@ public class Producer {
         factory.setHost("127.0.0.1");
         factory.setUsername("guest");
         factory.setPassword("guest");
-
 
         try {
             //创建链接
